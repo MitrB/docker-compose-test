@@ -3,18 +3,11 @@ version: "3.8"
 services:
   server:
     build: ./server
-    networks:
-      - testnet
     command: ["python", "server.py"]
 
   client:
     build: ./client
-    networks:
-      - testnet
     depends_on:
       - server
     command: ["python", "client.py"]
-
-networks:
-  testnet:
 
